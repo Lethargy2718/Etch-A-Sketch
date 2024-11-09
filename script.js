@@ -6,6 +6,7 @@ const eraseAll = document.querySelector('#eraseAll')
 const random = document.querySelector('#random')
 const darken = document.querySelector('#darken')
 const gridResize = document.querySelector("#gridSize")
+const gridSizeLabel = document.querySelector("#gridSizeLabel")
 
 // Initializing variables
 const black = 'hsl(0, 0%, 0%)'
@@ -95,7 +96,7 @@ gridResize.addEventListener('click', () => {
 function drawGrid() {
     sketch.innerHTML = ''
     let size = 100/gridSize
-
+    gridSizeLabel.textContent = `${gridSize} x ${gridSize}`
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
             const pixel = document.createElement('div')

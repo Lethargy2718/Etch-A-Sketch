@@ -75,6 +75,10 @@ i {
     flex-wrap: wrap;   
 }
 
+#gridSizeLabel {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 
 button {
     width: 20rem;
