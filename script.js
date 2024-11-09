@@ -45,8 +45,12 @@ eraseAll.addEventListener('click', () => {
 
 pencil.addEventListener('click', () => {
     currColor = "black"
+    pencil.classList.add("toggled");
+    eraser.classList.remove("toggled");
 })
 
 eraser.addEventListener('click', () => {
     currColor = "white" 
+    eraser.classList.add("toggled");
+    pencil.classList.remove("toggled");
 })
