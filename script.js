@@ -1,5 +1,11 @@
+// DOM selection
 const sketch = document.querySelector('.sketch')
+const pencil = document.querySelector('#pencil')
+const eraser = document.querySelector('#eraser')
+const eraseAll = document.querySelector('#eraseAll')
+
 let mouseDown = false
+let currColor = "black";
 
 // Disable dragging as it caused some glitches.
 document.addEventListener('dragstart', (e) => e.preventDefault());
@@ -21,11 +27,26 @@ for (let i = 0; i < 16; i++) {
         sketch.appendChild(pixel)
         
         pixel.addEventListener('mouseover', () => {
-            if (mouseDown) pixel.style.backgroundColor = "black"
+            if (mouseDown) pixel.style.backgroundColor = currColor
         }) 
         pixel.addEventListener('mousedown', () => {
-            pixel.style.backgroundColor = "black"
+            pixel.style.backgroundColor = currColor
         }) 
         
     }
 }
+
+eraseAll.addEventListener('click', () => {
+    const pixels = sketch.querySelectorAll('div')
+    pixels.forEach(element => {
+        element.style.backgroundColor = "white"
+    })
+})
+
+pencil.addEventListener('click', () => {
+    currColor = "black"
+})
+
+eraser.addEventListener('click', () => {
+    currColor = "white" 
+})
